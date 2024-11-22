@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo" id="logo">
+            <a href="catalog.html" style="font-family: 'Hammersmith One'; font-size: larger;">chief</a></div>
+        <div class="nav-links">
+            <a href="lookbook.html">Lookbook</a>
+            <a href="info.html">Info</a>
+        </div>
+    </div>
+
+    <div class="catalog">
+        <!-- Product Items -->
+        <div class="product" onclick="showProductDetail(1)">
+            <img src="product-img/chief-img-1.jpg" alt="Product 1">
+        </div>
+        <div class="product" onclick="showProductDetail(2)">
+            <img src="product-img/chief-img-2.jpg" alt="Product 2">
+        </div>  
+        <div class="product" onclick="showProductDetail(3)">
+            <img src="product-img/chief-img-3.jpg" alt="Product 3">
+        </div>
+        <div class="product" onclick="showProductDetail(4)">
+            <img src="product-img/chief-img-4.jpg" alt="Product 4">
+        </div>
+
+    </div>
+    <footer class="footer">
+        <span>ALL SALES FINAL</span>
+        <span>&copy; 2024, IN SERVICE OF ALL</span>
+        <img id="footer-logo" src="mascot/an-1.png" alt ="logo">
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+/* Container styling */
+
+.lookbook-container {
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+/* Main image styling */
+.main-image-container {
+    flex: 3;
+    position: relative;
+}
+
+#main-image {
+    width: 100%;
+    transition: transform 0.5s ease; /* Sliding animation */
+}
+
+/* Image info styling */
+.image-info {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.image-info h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.image-info p {
+    color: #777;
+}
+
+#image-count {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Thumbnail styling */
+.thumbnail-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.thumbnail {
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover {
+    opacity: 0.7;
+}
+
+/* Active thumbnail styling */
+.thumbnail.active {
+    border: 2px solid #000;
+    opacity: 1;
+}
+/* Footer styling */
+.footer {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;/* Distribute space between text and image */
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    position: fixed; /* Fixed position to keep footer in view */
+    bottom: 0;       /* Stick to the bottom of the viewport */
+    left: 0;
+    background-color: #fff; /* Set background color to avoid transparency */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    align-content: center;
+}
+
+.footer img {
+    max-width: 50px; /* Set a max width for the image */
+    max-height: 100%; /* Prevent the image from exceeding the container's height */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Contain image within the defined max dimensions */
+}
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,129 @@
+/* General styling */
+* {
+    padding: ;
+}
+body {
+    /* font-family: "Hammersmith One" */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    padding-bottom: 60px; /* Adjust padding to match footer height */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    max-width: 100%;
+    height: auto;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 2%;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.catalog {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 20px;
+}
+
+.product-gallery img     {
+    width: 100px;
+    height: 100px;
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s ease; /* Smooth transition */
+    display: block; /* Ensures no extra space from inline elements */
+    margin: 0 auto; /* Centers the image horizontally (if inside a container) */
+}
+
+.product img:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* Grows 5% larger while keeping the center as the origin */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 48%;
+}
+
+/* Footer styling */
+.footer {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;/* Distribute space between text and image */
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    position: fixed; /* Fixed position to keep footer in view */
+    bottom: 0;       /* Stick to the bottom of the viewport */
+    left: 0;
+    background-color: #fff; /* Set background color to avoid transparency */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    align-content: center;
+}
+
+.footer img {
+    max-width: 50px; /* Set a max width for the image */
+    max-height: 100%; /* Prevent the image from exceeding the container's height */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Contain image within the defined max dimensions */
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+}

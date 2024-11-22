@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 1 Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo" id="logo">
+            <a href="catalog.html" style="font-family: 'Hammersmith One'; font-size: larger;">chief</a></div>
+        <div class="nav-links">
+            <a href="lookbook.html">Lookbook</a>
+            <a href="info.html">Info</a>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; height: 600px; width: 100%; margin: auto;">
+        <div id="img-container" style="width: 40%; margin-left: -5%;">
+            <img id="product-image" style="width: 100%;" src="" alt="">
+        </div>
+        <div id="product-detail">
+            <h1 id="product-name" style="font-family: 'Hammersmith One';"></h1>
+            <p id="product-description" style="font-family: 'Hammersmith One'"></p>
+            <button style="padding: 10px 30px; background-color: rgb(141, 5, 5); color: #FFF; font-family: ; border: none; border-radius: 20px;"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd9SUnIWfTLy94VwcUaq9wGdKDlZRWBVOvlVc_ImG-QMTZSiA/formResponse" style="text-decoration: none; color: white">Order Now</a></button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <span>ALL SALES FINAL</span>
+        <span>&copy; 2024, IN SERVICE OF ALL</span>
+        <img id="footer-logo" src="mascot/an-1.png" alt ="logo">
+    </footer>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get("id");
+
+        const products = {
+            1: { name: "RIOT RINGER TEE", description: "Unleash your inner rebel."},
+            2: { name: "KNUCKLES Necklace", description: "Bold. Fearless. A knuckle pendant on a sleek 45 cm chain for Rp. 50,000. Make your statement."},
+            3: { name: "VOID Hoodie", description: "All black, bold graphics, no compromises. Step into the void."}, 
+            4: { name: "ASH Longsleeve", description: "Faded black, clean design. No extras—just raw attitude."}
+        };
+        
+        const productDetail = document.getElementById('product-detail')
+        if (productId && products[productId]) {
+            const product = products[productId];
+            document.getElementById("product-name").textContent = product.name;
+            document.getElementById("product-image").src = `product-img/chief-img-${productId}.jpg`;
+            document.getElementById("product-image").alt = product.name;
+            document.getElementById("product-description").textContent = product.description;
+            document.getElementById("product-price").textContent = `Price: ${product.price}`;
+        } else {
+            productDetail.innerHTML = "<p>Product not found!</p>";
+        }
+    </script>
+</body>
+</html>
