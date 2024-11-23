@@ -9,71 +9,67 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
         }
 
         .lookbook-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            flex-wrap: wrap;
+            max-width: 100%; /* Memastikan elemen grid mengisi lebar penuh */
+            margin: 0 auto;
         }
 
-        /* Spotlight Image */
-        .spotlight {
-            flex: 1 1 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 300px;
-        }
-
-        .spotlight img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        /* Thumbnail Grid */
-        .thumbnail-grid {
-            flex: 1 1 50%;
+        .full-width-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            min-width: 300px;
+            gap: 0; /* Menghilangkan jarak antar elemen */
+            grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); /* Membagi foto secara rata */
         }
 
-        .thumbnail-grid img {
+        .full-width-grid img {
             width: 100%;
-            border-radius: 8px;
-            cursor: pointer;
+            height: auto;
             object-fit: cover;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .thumbnail-grid img:hover {
+        .full-width-grid img:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .lookbook-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .spotlight, .thumbnail-grid {
-                flex: 1 1 100%;
-            }
+        .footer {
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;/* Distribute space between text and image */
+            align-items: center;
+            gap: 2rem;
+            border-top: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: #333;
+            position: fixed; /* Fixed position to keep footer in view */
+            bottom: 0;       /* Stick to the bottom of the viewport */
+            left: 0;
+            background-color: #fff; /* Set background color to avoid transparency */
+            z-index: 1000; /* Ensure it stays on top of other elements */
+            align-content: center;
         }
+
+        .footer img {
+            max-width: 50px; /* Set a max width for the image */
+            max-height: 100%; /* Prevent the image from exceeding the container's height */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Contain image within the defined max dimensions */
+        }
+
+        img {
+            bor
+        }
+
     </style>
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" style="">
         <div class="logo" id="logo">
             <a href="catalog.html" style="font-family: 'Hammersmith One'; font-size: larger;">chief</a></div>
         <div class="nav-links" style="margin-right: 3%;">
@@ -81,23 +77,33 @@
             <a href="info.html">Info</a>
         </div>
     </div>
-    <div class="lookbook-container" style="">
-        <div class="spotlight">
-            <img id="spotlight-image" src="lkpic/lookbook-pic-5.JPG" alt="Spotlight Image">
+    <div class="lookbook-container" style="margin-top: 4%;">
+        <div class="full-width-grid" style="gap: 10px;">
+            <!-- Photos -->
+            <img src="lkpic/lkpic-1.JPG" alt="Lookbook Image 1">
+            <img src="lkpic/lkpic-2.JPG" alt="Lookbook Image 2">
+            <img src="lkpic/lkpic-3.JPG" alt="Lookbook Image 3">
+            <img src="lkpic/lkpic-4.JPG" alt="Lookbook Image 4">
+            <img src="lkpic/lkpic-5.JPG" alt="Lookbook Image 5">
+            <img src="lkpic/lkpic-6.JPG" alt="Lookbook Image 6">
+            <img src="lkpic/lkpic-7.JPG" alt="Lookbook Image 7">
+            <img src="lkpic/lkpic-8.JPG" alt="Lookbook Image 8">
+            <img src="lkpic/lkpic-9.JPG" alt="Lookbook Image 9">
+            <img src="lkpic/lkpic-10.JPG" alt="Lookbook Image 10">
+            <img src="lkpic/lkpic-11.JPG" alt="Lookbook Image 11">
+            <img src="lkpic/lkpic-12.JPG" alt="Lookbook Image 12">
+            <img src="lkpic/lkpic-13.JPG" alt="Lookbook Image 13">
+            <img src="lkpic/lkpic-14.JPG" alt="Lookbook Image 14">
+            <img src="lkpic/lkpic-15.JPG" alt="Lookbook Image 15">
+            <img src="lkpic/lkpic-16.JPG" alt="Lookbook Image 16">
         </div>
-        <div class="thumbnail-grid">
-            <img class="thumbnail" src="lkpic/lookbook-pic-1.JPG" alt="Thumbnail Image 2">
-            <img class="thumbnail" src="lkpic/lookbook-pic-2.JPG" alt="Thumbnail Image 3">
-            <img class="thumbnail" src="lkpic/lookbook-pic-3.JPG" alt="Thumbnail Image 4">
-            <img class="thumbnail" src="lkpic/lookbook-pic-4.JPG" alt="Thumbnail Image 5">
-        </div>
+    </div>    
     </div>
     <footer class="footer">
         <span>ALL SALES FINAL</span>
-        <span>&copy; 2024, Born From Pain</span>
+        <span>&copy; 2024, IN SERVICE OF ALL</span>
         <img id="footer-logo" src="mascot/an-1.png" alt ="logo">
     </footer>
-    <script src="lookbook.js">
 
     </script>
 </body>
